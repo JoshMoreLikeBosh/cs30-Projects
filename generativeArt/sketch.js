@@ -6,11 +6,14 @@
 // - describe what you did to take this project "above and beyond"
 
 let spacing;
+let x = 50;
+let y = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background("white");
-  lotsOfLines(50, 50);
+  lotsOfLines(x, y);
+  numberChange(x, y);
 }
 
 function draw() {
@@ -39,5 +42,12 @@ function diagonalLine(x, y, spacing) {
     // neg slope
     line(x - spacing/2, y - spacing/2, x + spacing/2, y + spacing/2);
 
+  }
+}
+
+function numberChange(x, y) {
+  if (keyIsPressed(UP_ARROW)) {
+    x + 10;
+    y + 10;
   }
 }
