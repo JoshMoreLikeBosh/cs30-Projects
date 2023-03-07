@@ -46,7 +46,7 @@ function spawnBall(tempX, tempY) {
     dx: random(-5, 5),
     dy: random(-5, 5),
     diameter: random(25, 100),
-    theColor: color(random(255), random(255), random(255)),
+    theColor: color(random(0), random(0), random(255)),
   };
   shapes.push(newBall);
 }
