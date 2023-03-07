@@ -4,5 +4,6 @@
 - [Moving Rectangle](movingRectangle)
 - [Generative Art](generativeArt)
 - [Thingamajig](Thingamajig)
+- [Doohickey](Doohickey)
 
 ## Project
