@@ -3,8 +3,8 @@
 ## Demos
 - [Moving Rectangle](movingRectangle)
 - [Generative Art](generativeArt)
-- [Thingamajig](Thingamajig)
-- [Doohickey](Doohickey)
+- [Circle Maker](Thingamajig)
+- [Weird Square thing](Doohickey)
 - [Doodad](Doodad)
 - [whatchamacallit](whatchamacallit)
 - [SleepApnea](SleepApnea)
