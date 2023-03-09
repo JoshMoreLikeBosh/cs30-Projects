@@ -31,7 +31,7 @@ function draw() {
 function drawSquare() {
   noStroke;
   translate(x, y);
-  fill(random(200), random(20), random(200))
+  fill(random(200), random(20), random(200));
   rotate(r);
   rect(0, 0 , rectSize, rectSize);
   noStroke;
