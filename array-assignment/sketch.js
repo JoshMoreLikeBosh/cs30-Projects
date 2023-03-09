@@ -10,24 +10,35 @@
 let x;
 let y;
 let rectSize;
+let r = 5;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width/2;
   y = height/2;
-  rectSize = 500
-  rectMode(CENTER);
+  rectSize = 200;
+  rectMode(CORNERS);
+  angleMode(DEGREES);
+  noStroke;
 }
 
 function draw() {
   //background(220);
   drawSquare();
+  noStroke;
 }
 
 function drawSquare() {
-  rect(x, y , rectSize, rectSize);
-  rotate(5);
+  noStroke;
+  translate(x, y);
+  fill(random(200), random(20), random(200))
+  rotate(r);
+  rect(0, 0 , rectSize, rectSize);
+  noStroke;
+  r++;
 }
+
+
 
 // let boxes = [];
 // function setup() {
