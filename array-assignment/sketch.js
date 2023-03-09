@@ -10,14 +10,14 @@
 let x;
 let y;
 let rectSize;
-let r = 5;
+let r = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width/2;
   y = height/2;
   rectSize = 200;
-  rectMode(CORNERS);
+  rectMode(CORNER);
   angleMode(DEGREES);
   noStroke;
 }
@@ -34,7 +34,7 @@ function drawSquare() {
   fill(random(200), random(20), random(200));
   rotate(r);
   rect(0, 0 , rectSize, rectSize);
-  noStroke;
+  noStroke();
   r++;
 }
 
