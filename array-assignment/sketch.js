@@ -16,26 +16,27 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   x = width/2;
   y = height/2;
-  rectSize = 200;
-  rectMode(CORNER);
+  rectSize = 50;
+  rectMode(CENTER);
   angleMode(DEGREES);
-  noStroke;
+  
 }
 
 function draw() {
   //background(220);
   drawSquare();
-  noStroke;
+  
 }
 
 function drawSquare() {
   noStroke;
   translate(x, y);
-  fill(random(200), random(20), random(200));
+  fill(random(200), random(10), random(20));
   rotate(r);
   rect(0, 0 , rectSize, rectSize);
   noStroke();
   r++;
+  rectSize += sin(frameCount/8);
 }
 
 
