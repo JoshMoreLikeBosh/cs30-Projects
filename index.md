@@ -7,7 +7,7 @@
 - [Weird Square thing](Doohickey)
 - [Doodad](Doodad)
 - [whatchamacallit](whatchamacallit)
-- [SleepApnea](SleepApnea)
+- [terrain generation](SleepApnea)
 
 ## Project
 - [Arrays and Object Notation](array-assignment)
