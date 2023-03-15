@@ -9,35 +9,110 @@
 
 let x;
 let y;
-let rectSize;
-let r = 50;
+let color1 = 10;
+let color2 = 10;
+let color3 = 10;
+let playerOptions = {
+  name: "input",
+  size: 0,
+  color: [
+    color1,
+    color2,
+    color3
+  ]
+};
+let size1;
+
+let size2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  x = width/2;
-  y = height/2;
-  rectSize = 50;
-  rectMode(CENTER);
-  angleMode(DEGREES);
-  
+  size1 = prompt("x axis");
+  size2 = prompt("y axis");
 }
 
 function draw() {
-  //background(220);
-  drawSquare();
-  
+  background(200);
+  drawPlayer();
 }
 
-function drawSquare() {
-  noStroke;
-  translate(x, y);
-  fill(noise(frameCount/20)*200, noise(frameCount/20)*10, noise(frameCount/20)*20);
-  rotate(r);
-  rect(0, 0 , rectSize, rectSize);
-  noStroke();
-  r++;
-  rectSize += sin(frameCount/8);
+function drawPlayer(size1, size2, position1, position2) {
+  // size1 = prompt("x axis");
+  // size2 = prompt("y axis");
+  position1 = 10;
+  position2 = 10;
+
+  rect(size1, size2, position1, position2);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let x;
+// let y;
+// let rectSize;
+// let r = 50;
+
+
+// function setup() {
+//   createCanvas(windowWidth, windowHeight);
+//   x = width/2;
+//   y = height/2;
+//   rectSize = 50;
+//   rectMode(CENTER);
+//   angleMode(DEGREES);
+  
+// }
+
+// function draw() {
+//   //background(220);
+//   drawSquare();
+  
+
+// }
+
+// function shapeType(a, b) {
+//   a = rect;
+//   b = circle;
+// }
+
+// function drawSquare() {
+//   noStroke;
+//   translate(x, y);
+//   fill(noise(frameCount/20)*200, noise(frameCount/20)*10, noise(frameCount/20)*20);
+//   rotate(r);
+//   rect(0, 0 , rectSize, rectSize);
+//   noStroke();
+//   r++;
+//   rectSize += sin(frameCount/8);
+// }
 
 
 
