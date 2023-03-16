@@ -9,40 +9,46 @@
 
 let x;
 let y;
-let color1 = 10;
-let color2 = 10;
-let color3 = 10;
+let r = 50;
+let color1 = prompt("red");
+let color2 = prompt("green");
+let color3 = prompt("blue");
+let size1 = prompt("width");
+let size2 = prompt("height");
+let position1 = prompt("x pos");
+let position2 = prompt("y pos");
 let playerOptions = {
   name: "input",
-  size: 0,
+  size: size1 && size2,
   color: [
     color1,
     color2,
     color3
   ]
 };
-let size1;
 
-let size2;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  size1 = prompt("x axis");
-  size2 = prompt("y axis");
+  translate(mouseX, mouseY);
+  
+  
+  
+  
 }
 
 function draw() {
   background(200);
-  drawPlayer();
+  
+  drawRect(position1, position2, size1, size2);
 }
 
-function drawPlayer(size1, size2, position1, position2) {
-  // size1 = prompt("x axis");
-  // size2 = prompt("y axis");
-  position1 = 10;
-  position2 = 10;
+function drawRect(position1, position2, size1, size2) {
+  fill(playerOptions.color[0], playerOptions.color[1], playerOptions.color[2]);
+  rotate(r);
+  rect(position1, position2, size1, size2);
+  r++;
 
-  rect(size1, size2, position1, position2);
 }
 
 
@@ -113,6 +119,34 @@ function drawPlayer(size1, size2, position1, position2) {
 //   r++;
 //   rectSize += sin(frameCount/8);
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
