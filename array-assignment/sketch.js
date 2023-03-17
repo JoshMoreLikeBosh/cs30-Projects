@@ -26,11 +26,11 @@ let playerOptions = {
     color3
   ]
 };
-
+translate(position1/2, position2/2);
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  translate(mouseX, mouseY);
+  rectMode(CORNER);
   
   
   
@@ -45,7 +45,7 @@ function draw() {
 
 function drawRect(position1, position2, size1, size2) {
   fill(playerOptions.color[0], playerOptions.color[1], playerOptions.color[2]);
-  rotate(r);
+  rotate(r*PI/180);
   rect(position1, position2, size1, size2);
   r++;
 
