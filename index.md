@@ -8,6 +8,7 @@
 - [Doodad](Doodad)
 - [whatchamacallit](whatchamacallit)
 - [terrain generation](SleepApnea)
+- [Grid-Demo](Grid-Demo)
 
 ## Project
 - [Arrays and Object Notation](array-assignment)

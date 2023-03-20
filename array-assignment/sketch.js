@@ -9,14 +9,15 @@
 
 let x;
 let y;
-let r = 50;
+let r = 10;
+let ewpert = 10;
 let color1 = prompt("red");
 let color2 = prompt("green");
 let color3 = prompt("blue");
 let size1 = prompt("width");
 let size2 = prompt("height");
-let position1 = prompt("x pos");
-let position2 = prompt("y pos");
+let position1 = 100;
+let position2 = 10;
 let playerOptions = {
   name: "input",
   size: size1 && size2,
@@ -26,11 +27,11 @@ let playerOptions = {
     color3
   ]
 };
-translate(position1/2, position2/2);
 
+translate(position1, position2);
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  rectMode(CORNER);
+  rectMode(CENTER);
   
   
   
@@ -40,15 +41,31 @@ function setup() {
 function draw() {
   background(200);
   
-  drawRect(position1, position2, size1, size2);
+  drawRect(mouseX, mouseY, size1, size2);
 }
 
 function drawRect(position1, position2, size1, size2) {
   fill(playerOptions.color[0], playerOptions.color[1], playerOptions.color[2]);
-  rotate(r*PI/180);
-  rect(position1, position2, size1, size2);
-  r++;
+  //rotate(r*PI/90);
+  //translate(mouseX, mouseY);
+  rect(mouseX, mouseY, size1, size2);
+  //r++;
 
+}
+
+function keyPressed() {
+  if (key === "a") {
+    size1 += ewpert;
+  }
+  if (key === "d") {
+    size1 -= ewpert;
+  }
+  if (key === "s") {
+    size2 -= ewpert;
+  }
+  if (key === "w") {
+    size2 += ewpert;
+  }
 }
 
 
