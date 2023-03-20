@@ -38,7 +38,7 @@ function spawnBubble() {
     x: random(width),
     y: random(height),
     size: random(5, 50),
-    color: color(random(255), random(255), random(255), random(255)),
+    color: color(random(255)),
     time: random(10000),
   };
   theBubbles.push(bubble);
