@@ -2,8 +2,10 @@
 // Joshua Wright
 // March 21, 2023
 
-const ROWS = 4;
-const COLS = 4;
+let numberOfSquares = 8;
+
+const ROWS = numberOfSquares;
+const COLS = numberOfSquares;
 let grid;
 let cellSize;
 
