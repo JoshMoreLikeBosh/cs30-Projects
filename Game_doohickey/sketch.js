@@ -1,71 +1,76 @@
-// 2d array grid demo
-// Your Name
-// Date
+// Color game
+// Joshua Wright
+// March 21, 2023
 
-// let grid = [[0, 1, 1, 1],
-//             [1, 1, 0, 0],
-//             [1, 1, 1, 1],
-//             [0, 1, 0, 1]];
-
+const ROWS = 4;
+const COLS = 4;
 let grid;
-const ROWS = 20;
-const COLS = 20;
 let cellSize;
+
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  grid = createRandomGrid(ROWS, COLS);
+  grid = createEmpty2dArray(ROWS, COLS);
 
+  //fill largest square area possible
   if (width < height) {
-    cellSize = width/ROWS;
+    cellSize = width/COLS;
   } 
   else {
     cellSize = height/ROWS;
   }
+  mousePressed();
 }
 
 function draw() {
   background(220);
-  displayGrid();
-}
-
-function keyTyped() {
-  if (key === "r") {
-    grid = createRandomGrid(ROWS, COLS);
-  }
+  displayGrid(grid);
 }
 
 function mousePressed() {
   let x = Math.floor(mouseX/cellSize);
   let y = Math.floor(mouseY/cellSize);
-  grid[y][x] = !grid[y][x];
+  
+  toggleCell(x, y);
+  toggleCell(x+1, y);
+  toggleCell(x-1, y);
+  toggleCell(x, y+1);
+  toggleCell(x, y-1);
+
 }
 
-function displayGrid() {
+function toggleCell(x, y) {
+  if (x >= 0 && x < COLS && y>= 0 && y < ROWS) {
+    if (grid[y][x] === 0) {
+    grid[y][x] = 1;
+  }
+  else if (grid[y][x] === 1) {
+    grid[y][x] = 0;
+  }
+  }
+  
+}
+
+function displayGrid(grid) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 1) {
-        fill("black");
+        fill("blue");
       }
       else if (grid[y][x] === 0) {
-        fill("white");
+        fill("orange");
       }
       rect(x * cellSize, y * cellSize, cellSize, cellSize);
     }
   }
 }
 
-function createRandomGrid(ROWS, COLS) {
+function createEmpty2dArray(ROWS, COLS) {
   let newGrid = [];
   for (let y = 0; y < ROWS; y++) {
     newGrid.push([]);
     for (let x = 0; x < COLS; x++) {
-      if (random(100) < 50) {
-        newGrid[y].push(1);
-      }
-      else {
-        newGrid[y].push(0);
-      }
+      newGrid[y].push(0);
     }
   }
   return newGrid;

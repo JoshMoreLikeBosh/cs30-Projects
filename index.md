@@ -9,6 +9,7 @@
 - [whatchamacallit](whatchamacallit)
 - [terrain generation](SleepApnea)
 - [Grid-Demo](Grid-Demo)
+- [Game-doohickey](Game-doohickey)
 
 ## Project
 - [Arrays and Object Notation](array-assignment)
