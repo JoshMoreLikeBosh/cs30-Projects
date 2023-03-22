@@ -44,11 +44,11 @@ function mousePressed() {
 function toggleCell(x, y) {
   if (x >= 0 && x < COLS && y>= 0 && y < ROWS) {
     if (grid[y][x] === 0) {
-    grid[y][x] = 1;
-  }
-  else if (grid[y][x] === 1) {
-    grid[y][x] = 0;
-  }
+      grid[y][x] = 1;
+    }
+    else if (grid[y][x] === 1) {
+      grid[y][x] = 0;
+    }
   }
   
 }
