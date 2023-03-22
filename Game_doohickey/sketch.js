@@ -2,7 +2,7 @@
 // Joshua Wright
 // March 21, 2023
 
-let numberOfSquares = 8;
+let numberOfSquares = 25;
 
 const ROWS = numberOfSquares;
 const COLS = numberOfSquares;
