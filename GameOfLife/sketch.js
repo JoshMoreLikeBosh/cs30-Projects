@@ -86,7 +86,7 @@ function updateGrid() {
       }
 
       if (grid[y][x] === 0) { //dead
-        if (neighbours === 1) { // change to 1 for cool effect
+        if (neighbours === 3) { // change to 1 for cool effect
           nextTurn[y][x] = 1; //new birth
         }
         else {

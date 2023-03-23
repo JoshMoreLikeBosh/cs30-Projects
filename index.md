@@ -14,3 +14,4 @@
 
 ## Project
 - [Arrays and Object Notation](array-assignment)
+- [Grid-Project](Grid-Project)
