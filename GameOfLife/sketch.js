@@ -2,7 +2,7 @@
 // Dan Schellenberg
 // March 21, 2023
 
-let gridSize = 50;
+let gridSize = 100;
 const ROWS = gridSize;
 const COLS = gridSize;
 let grid;
@@ -20,11 +20,12 @@ function setup() {
   else {
     cellSize = height/ROWS;
   }
+  noStroke();
 }
 
 function draw() {
   background(220);
-  if (autoUpdate && frameCount % 10 === 0) {
+  if (autoUpdate && frameCount % 1 === 0) {
     grid = updateGrid();
   }
   displayGrid(grid);
@@ -85,7 +86,7 @@ function updateGrid() {
       }
 
       if (grid[y][x] === 0) { //dead
-        if (neighbours === 3) {
+        if (neighbours === 1) { // change to 1 for cool effect
           nextTurn[y][x] = 1; //new birth
         }
         else {
@@ -114,10 +115,10 @@ function displayGrid(grid) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
-        fill("white");
+        fill("black");
       }
       if (grid[y][x] === 1) {
-        fill("black");
+        fill("white");
       }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
@@ -150,3 +151,4 @@ function createRandom2dArray(ROWS, COLS) {
   }
   return newGrid;
 }
+
