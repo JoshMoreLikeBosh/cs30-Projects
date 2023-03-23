@@ -114,10 +114,10 @@ function displayGrid(grid) {
   for (let y = 0; y < ROWS; y++) {
     for (let x = 0; x < COLS; x++) {
       if (grid[y][x] === 0) {
-        fill("orange");
+        fill("white");
       }
       if (grid[y][x] === 1) {
-        fill("blue");
+        fill("black");
       }
       rect(x*cellSize, y*cellSize, cellSize, cellSize);
     }
