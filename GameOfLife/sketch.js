@@ -25,7 +25,7 @@ function setup() {
 
 function draw() {
   background(220);
-  if (autoUpdate && frameCount % 1 === 0) {
+  if (autoUpdate && frameCount % 10 === 0) {
     grid = updateGrid();
   }
   displayGrid(grid);
@@ -86,7 +86,7 @@ function updateGrid() {
       }
 
       if (grid[y][x] === 0) { //dead
-        if (neighbours === 3) { // change to 1 for cool effect
+        if (neighbours === 1) { // change to 1 for cool effect
           nextTurn[y][x] = 1; //new birth
         }
         else {
