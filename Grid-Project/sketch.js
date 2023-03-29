@@ -25,53 +25,18 @@ function setup() {
   angleMode(DEGREES);
   // cam.tilt(-5);
   cam.lookAt(-25, 0, 10);
-  cam.tilt(3);
-  cam.pan(3);
-  //cam.setPosition(30 * 15, 30 * 15, 30 * 15);
-  //translate(30*30, 0, 0);
-  rotateX(-45);
-  rotateY(137);
+  cam.tilt(-30);
+  cam.pan(-30);
+  cam.setPosition(-1500, 1500, 3000);
+
+
+
 }
 
 function draw() {
   background(200);
 
-  if (keyIsDown(39)) {
-    cam.pan(0.5);
-  }
-  if (keyIsDown(37)) {
-    cam.pan(-0.5);
-  }
-  if (keyIsDown(38)) {
-    cam.tilt(-0.5);
-  }
-  if (keyIsDown(40)) {
-    cam.tilt(0.5);
-  }
-  if (keyIsDown(75)) {
-    boxGap+=3;
-  }
-  if (keyIsDown(76)) {
-    boxGap-=3;
-  }
-
-
-  // box rotate
-  if (keyIsDown(84)) {
-    rotateX(3);
-  }
-  if (keyIsDown(71)) {
-    rotateX(-3);
-  }
-
-
-  
-
-
-
-  //createBox();
-  //box(boxSize, boxSize, boxSize);
-  translate(boxSize, 0, 0);
+  camMovement();
 
   createBox();
 
@@ -103,17 +68,66 @@ function keyTyped() {
   else if (key === "p") {
     boxGap-=3;
   }
-  else if (key === "w") {
-    cam.tilt(3);
-  }
-  else if (key === "s") {
-    cam.tilt(-3);
-  }
-  else if (key === "a") {
-    cam.pan(-3);
-  }
-  else if (key === "d") {
-    cam.pan(3);
-  }
 }
 
+function camMovement() {
+  // left arrow pans cam left
+  if (keyIsDown(39)) {
+    cam.pan(-3);
+  }
+  // right arrow pans cam right
+  if (keyIsDown(37)) {
+    cam.pan(3);
+  }
+  //down arrow tilts cam down
+  if (keyIsDown(38)) {
+    cam.tilt(-3);
+  }
+  //  up arrow tilts cam up
+  if (keyIsDown(40)) {
+    cam.tilt(3);
+  }
+  //  l expand
+  if (keyIsDown(75)) {
+    boxGap+=3;
+  }
+  //  k shrink
+  if (keyIsDown(76)) {
+    boxGap-=3;
+  }
+
+
+  // box rotate
+  //t tilt up
+  if (keyIsDown(84)) {
+    rotateX(30);
+  }
+  //g tilt down
+  if (keyIsDown(71)) {
+    rotateX(-30);
+  }
+  //q zoom in
+  if (keyIsDown(81)) {
+    cam.move(0, 0, 40);
+  }
+  //e zoom out
+  if (keyIsDown(69)) {
+    cam.move(0, 0, -40);
+  }
+  //a moves cam left
+  if (keyIsDown(65)) {
+    cam.move(-25, 0, 0);
+  }
+  //d moves cam right
+  if (keyIsDown(68)) {
+    cam.move(25, 0, 0);
+  }
+  // w moves cam up
+  if (keyIsDown(87)) {
+    cam.move(0, -25, 0);
+  }
+  // s moves can down
+  if (keyIsDown(83)) {
+    cam.move(0, 25, 0);
+  }
+}
