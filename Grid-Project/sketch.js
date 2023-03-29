@@ -28,7 +28,7 @@ function setup() {
   cam.tilt(3);
   cam.pan(3);
   //cam.setPosition(30 * 15, 30 * 15, 30 * 15);
-  translate(30*30, 0, 0);
+  //translate(30*30, 0, 0);
   rotateX(-45);
   rotateY(137);
 }
