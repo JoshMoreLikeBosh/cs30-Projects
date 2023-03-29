@@ -48,6 +48,12 @@ function draw() {
   if (keyIsDown(40)) {
     cam.tilt(0.5);
   }
+  if (keyIsDown(75)) {
+    boxGap+=3;
+  }
+  if (keyIsDown(76)) {
+    boxGap-=3;
+  }
 
 
   // box rotate
