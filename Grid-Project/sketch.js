@@ -13,6 +13,8 @@ const ROWS = gridSize;
 const COLS = gridSize;
 let boxSize = 30;
 let boxGap = 0;
+let rotatX = rotateX(0);
+let rotatY = rotateY(0);
 
 let boxStuff = {};
 
@@ -98,14 +100,22 @@ function camMovement() {
 
 
   // box rotate
-  //t tilt up
+  //t rotate
   if (keyIsDown(84)) {
-    rotateX(30);
+    rotateX(millis() / 10);
   }
-  //g tilt down
+  //g rotate
   if (keyIsDown(71)) {
-    rotateX(-30);
+    rotateX(millis() / -10);
   }
+  //f rotate
+  if (keyIsDown(70)) {
+    rotateY(millis() / 10);
+  }
+  if (keyIsDown(72)) {
+    rotateY(millis() / -10);
+  }
+
   //q zoom in
   if (keyIsDown(81)) {
     cam.move(0, 0, 40);
