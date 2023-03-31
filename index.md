@@ -11,6 +11,7 @@
 - [Grid-Demo](Grid-Demo)
 - [Game-doohickey](Game-doohickey)
 - [GameOfLife](GameOfLife)
+- [sodoku][sodoku]
 
 ## Project
 - [Arrays and Object Notation](array-assignment)

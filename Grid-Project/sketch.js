@@ -13,24 +13,24 @@ const ROWS = gridSize;
 const COLS = gridSize;
 let boxSize = 30;
 let boxGap = 0;
-let rotatX = rotateX(0);
-let rotatY = rotateY(0);
 
+let ben;
 let boxStuff = {};
+
+function preload() {
+  ben = loadImage("nubianape.gif");
+}
 
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   normalMaterial();
   cam = createCamera();
-  // set initial pan angle
-
   angleMode(DEGREES);
-  // cam.tilt(-5);
   cam.lookAt(-25, 0, 10);
   cam.tilt(-30);
   cam.pan(-30);
   cam.setPosition(-1500, 1500, 3000);
-
+ 
 
 
 }
@@ -42,16 +42,20 @@ function draw() {
 
   createBox();
 
+
 }
 
 function createBox() {
+  
   for (let i = 0; i < gridSize; i++) {
     translate(boxGap+boxSize, 0, 0);
     push();
+    
     for (let j = 0; j < gridSize; j++) {
       push();
       for (let l = 0; l < gridSize; l++) {
         translate(0, boxGap+boxSize, 0);
+        texture(ben);
         box(boxSize, boxSize, boxSize);
       }
       pop();
@@ -126,18 +130,18 @@ function camMovement() {
   }
   //a moves cam left
   if (keyIsDown(65)) {
-    cam.move(-25, 0, 0);
+    cam.move(-15, 0, 0);
   }
   //d moves cam right
   if (keyIsDown(68)) {
-    cam.move(25, 0, 0);
+    cam.move(15, 0, 0);
   }
   // w moves cam up
   if (keyIsDown(87)) {
-    cam.move(0, -25, 0);
+    cam.move(0, -15, 0);
   }
   // s moves can down
   if (keyIsDown(83)) {
-    cam.move(0, 25, 0);
+    cam.move(0, 15, 0);
   }
 }
