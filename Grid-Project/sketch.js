@@ -11,14 +11,22 @@ let delta = 0;
 let grid;
 const ROWS = gridSize;
 const COLS = gridSize;
-let boxSize = 30;
+let boxSize = 60;
 let boxGap = 0;
-
-let ben;
+let images;
 let boxStuff = {};
+let imagenum = prompt("image number")
 
 function preload() {
-  ben = loadImage("nubianape.gif");
+  images = [];
+  images.push(loadImage("nubianape.gif")); //0
+  images.push(loadImage("200w.gif")); // 1
+  images.push(loadImage("argh.gif")); // 2
+  images.push(loadImage("ben.png")); // 3
+  images.push(loadImage("emoji.png")); // 4
+  images.push(loadImage("psp.png")); // 5
+  images.push(loadImage("taxevasive.jpg")); // 6
+  
 }
 
 function setup() {
@@ -55,7 +63,7 @@ function createBox() {
       push();
       for (let l = 0; l < gridSize; l++) {
         translate(0, boxGap+boxSize, 0);
-        texture(ben);
+        texture(images[imagenum]);
         box(boxSize, boxSize, boxSize);
       }
       pop();
