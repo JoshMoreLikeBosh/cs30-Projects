@@ -15,7 +15,8 @@ let boxSize = 60;
 let boxGap = 0;
 let images;
 let boxStuff = {};
-let imagenum = prompt("image number")
+let imagenum = prompt("image number 0 to 8");
+let SkyBoxnum = prompt("whats the skybox 0 - 8");
 
 function preload() {
   images = [];
@@ -26,6 +27,8 @@ function preload() {
   images.push(loadImage("emoji.png")); // 4
   images.push(loadImage("psp.png")); // 5
   images.push(loadImage("taxevasive.jpg")); // 6
+  images.push(loadImage("skry.png")); // 7
+  images.push(loadImage("sky2.jpg")); // 8
   
 }
 
@@ -44,7 +47,10 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  
+  background("lavender");
+  
+  createSkyBox();
 
   camMovement();
 
@@ -152,4 +158,10 @@ function camMovement() {
   if (keyIsDown(83)) {
     cam.move(0, 15, 0);
   }
+}
+
+function createSkyBox() {
+  //fill("red");
+  texture(images[SkyBoxnum]);
+  box(7500, 7500, 7500);
 }
