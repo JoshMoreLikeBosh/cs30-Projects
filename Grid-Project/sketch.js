@@ -12,7 +12,7 @@ let grid;
 const ROWS = gridSize;
 const COLS = gridSize;
 let boxSize = 60;
-let boxGap = 0;
+let boxGap = -60;
 let images;
 let boxStuff = {};
 let imagenum = prompt("image number 0 to 8");
@@ -107,13 +107,15 @@ function camMovement() {
   if (keyIsDown(40)) {
     cam.tilt(3);
   }
-  //  l expand
+  //  l shrink
   if (keyIsDown(75)) {
     boxGap+=3;
+    console.log(boxGap);
   }
-  //  k shrink
+  //  k expand
   if (keyIsDown(76)) {
     boxGap-=3;
+    
   }
 
 
@@ -158,6 +160,10 @@ function camMovement() {
   if (keyIsDown(83)) {
     cam.move(0, 15, 0);
   }
+  // reset all
+  if (keyIsDown(90)) {
+    boxGap = 0;
+  }
 }
 
 function createSkyBox() {
@@ -165,3 +171,4 @@ function createSkyBox() {
   texture(images[SkyBoxnum]);
   box(7500, 7500, 7500);
 }
+
