@@ -16,7 +16,7 @@ let boxGap = -60;
 let images;
 let boxStuff = {};
 let imagenum = prompt("image number 0 to 8");
-let SkyBoxnum = prompt("whats the skybox 0 - 8");
+let SkyBoxnum = prompt("whats the skybox 0 - 9");
 
 function preload() {
   images = [];
@@ -29,7 +29,7 @@ function preload() {
   images.push(loadImage("taxevasive.jpg")); // 6
   images.push(loadImage("skry.png")); // 7
   images.push(loadImage("sky2.jpg")); // 8
-  
+  images.push(loadImage("stupidshiteater.gif")); // 9
 }
 
 function setup() {
