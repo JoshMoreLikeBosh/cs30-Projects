@@ -12,7 +12,8 @@
 - [Game-doohickey](Game-doohickey)
 - [GameOfLife](GameOfLife)
 - [sodoku](sodoku)
-= [OOP](OOP)
+- [OOP](OOP)
+- [OOP-Firework](OOP-Firework)
 
 ## Project
 - [Arrays and Object Notation](array-assignment)
