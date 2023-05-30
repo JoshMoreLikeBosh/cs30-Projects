@@ -15,6 +15,7 @@
 - [12OOP](OOP)
 - [13OOP-Firework](OOP-Firework)
 - [14BallArray](BallArray)
+- [15FractalCircles](FractalCircles)
 
 ## Project
 - [1Arrays and Object Notation](array-assignment)
